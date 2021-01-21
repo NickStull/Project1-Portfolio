@@ -29,6 +29,22 @@ p {
     opacity: 0.9;
 }
 
+a:link {
+    text-decoration: none;
+  }
+  
+a:visited {
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-decoration: none;
+  }
+  
+a:active {
+    text-decoration: none;
+  }
+
 main {
     font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
@@ -53,7 +69,7 @@ main {
     display: flex;
 }
 
-.circle1, .circle2 {
+.circle1 {
     background: white;
     background: linear-gradient(
         to right bottom,
@@ -64,28 +80,20 @@ main {
     width: 25vmin;
     position: absolute;
     border-radius: 50%;
-}
-
-.circle1 {
     top: 5%;
     right: 15%;
-    animation: move1 60s ease-in-out forwards infinite alternate;
-    /* animation-name: move1;
-    animation-duration: 10s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite; */
+    animation: move1 100s ease-in-out forwards infinite alternate;
 }
 
 @keyframes move1{
-    0% {
+    /* 0% {
         transform: translateX(0);
-    }
+    } */
     33% {
         transform: translateY(300%);
     }
     66% {
-        transform: translateY(-300%);
-        transform: translateX(-300%);
+        transform: translateY(-10%) translateX(-250%);
     }
     100% {
         transform: translateX(0%);
@@ -93,8 +101,37 @@ main {
 }
 
 .circle2 {
+    background: white;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, .8),
+        rgba(255, 255, 255, 0.3)
+    );
+    height: 25vmin;
+    width: 25vmin;
+    position: absolute;
+    border-radius: 20px;
     bottom: 5%;
-    left: 25%
+    left: 25%;
+    animation: move2 60s ease-in-out forwards infinite;
+}
+
+@keyframes move2{
+    0% {
+        transform: translateX(0) rotate(0);
+    }
+    20% {
+        transform: translateX(150%) rotate(72deg);
+    }
+    58% {
+        transform: translateY(-270%) translateX(-70%) rotate(209deg);
+    }
+    88% {
+        transform: translateY(0%) translateX(-70%) rotate(317deg);
+    }
+    100% {
+        transform: translateX(0%) rotate(360deg);
+    }
 }
 
 #avatar {
@@ -170,11 +207,6 @@ i {
     justify-content: space-evenly;
 }
 
-/* 
-.title {
-    margin-bottom: 20px;
-} */
-
 .card {
     display: flex;
     background: linear-gradient(
@@ -192,23 +224,52 @@ i {
     margin-left: 15px;
 }
 
-
-
 @media only screen and (max-width: 1410px) {
     .body {
         width: 70%;
     }
+
+    .circle1 {
+        top: 5%;
+        right: 10%;
+    }
+
+    .circle2 {
+        bottom: 2%;
+        left: 20%;
+    }
+
 }
 
 @media only screen and (max-width: 1055px) {
     .body {
         width: 80%;
     }
+
+    .circle1 {
+        top: 5%;
+        right: 5%;
+    }
+
+    .circle2 {
+        bottom: 2%;
+        left: 20%;
+    }
 }
 
 @media only screen and (max-width: 925px) {
     .body {
         width: 90%;
+    }
+
+    .circle1 {
+        top: 5%;
+        right: 0%;
+    }
+
+    .circle2 {
+        bottom: 2%;
+        left: 20%;
     }
 }
 
@@ -221,6 +282,16 @@ i {
 
     #avatar {
         max-width: 30vmin;
+    }
+
+    .circle1 {
+        top: 0%;
+        right: 0%;
+    }
+
+    .circle2 {
+        bottom: -70%;
+        left: 20%;
     }
 }
 
@@ -246,6 +317,16 @@ i {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 10px;
+    }
+
+    .circle1 {
+        top: 0%;
+        right: 0%;
+    }
+
+    .circle2 {
+        bottom: -115%;
+        left: 20%;
     }
 }
 
