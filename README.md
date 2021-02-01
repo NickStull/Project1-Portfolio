@@ -20,7 +20,7 @@ HTML and CSS
 
 ## License
 
-MIT License
+WTFPL
 
 ## Contact
 
